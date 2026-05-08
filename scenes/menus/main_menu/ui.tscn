@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://4m6qrfpqfrv7"]
+
+[ext_resource type="Script" uid="uid://m7b1oqmxsebq" path="res://scenes/main_scene/ui.gd" id="1_bnjq7"]
+
+[node name="UI" type="Control" unique_id=1573065100]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bnjq7")
+
+[node name="MainMenu" type="Panel" parent="." unique_id=957962671]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="MainMenu" unique_id=481175737]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -26.5
+offset_right = 112.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Iniciar Partida"
+
+[node name="CharacterMenu" type="Panel" parent="." unique_id=1004719108]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMenu" unique_id=1155701948]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -218.0
+offset_top = -198.0
+offset_right = 211.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 17
+
+[node name="LineEdit" type="LineEdit" parent="CharacterMenu/VBoxContainer" unique_id=1158366002]
+layout_mode = 2
+placeholder_text = "Nombre"
+
+[node name="Button2" type="Button" parent="CharacterMenu/VBoxContainer" unique_id=1173935444]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Aceptar"
+
+[connection signal="pressed" from="MainMenu/Button" to="." method="_on_new_game_start_pressed"]
+[connection signal="text_changed" from="CharacterMenu/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="CharacterMenu/VBoxContainer/Button2" to="." method="_on_BotonJugar_pressed"]

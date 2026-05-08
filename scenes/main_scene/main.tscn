@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://07k84p313l62"]
+
+[ext_resource type="Script" uid="uid://cj5lwrj40n74q" path="res://scenes/main_scene/main.gd" id="1_ionc4"]
+[ext_resource type="Script" uid="uid://c5fc70wbh3774" path="res://scenes/main_scene/event_handler.gd" id="1_nqgu8"]
+
+[node name="Main" type="Node3D" unique_id=1581814599]
+script = ExtResource("1_ionc4")
+
+[node name="EventController" type="Node" parent="." unique_id=951540149]
+script = ExtResource("1_nqgu8")
+
+[node name="LevelController" type="Node" parent="." unique_id=1741780724]
+
+[node name="UI" type="Control" parent="." unique_id=1051278491]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

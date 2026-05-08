@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cimwbwd6nhc8m"]
+
+[ext_resource type="PackedScene" uid="uid://dqhtvb3a17mk0" path="res://assets/models/test_fox/fox.glb" id="1_lw43t"]
+[ext_resource type="Script" uid="uid://1nu44vv7ixog" path="res://scenes/player/fox_scene_test/movement_handler.gd" id="2_2x8x0"]
+[ext_resource type="Script" uid="uid://c3ytksbeep5fh" path="res://scenes/player/fox_scene_test/animation_handler.gd" id="3_cb3rx"]
+[ext_resource type="Script" uid="uid://cywqipq221alh" path="res://scenes/player/fox_scene_test/player_menu.gd" id="4_3ped1"]
+[ext_resource type="FontFile" uid="uid://behmkiqpdc5cx" path="res://assets/fonts/FiraCode-VariableFont_wght.ttf" id="4_w6f36"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xb475"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ped1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m8kcf"]
+font = ExtResource("4_w6f36")
+font_size = 52
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.5176471)
+
+[node name="Player" type="CharacterBody3D" unique_id=209311392]
+
+[node name="fox" parent="." unique_id=923983428 instance=ExtResource("1_lw43t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.58916426, 0)
+
+[node name="MovementHandler" type="Node" parent="." unique_id=1571297325]
+script = ExtResource("2_2x8x0")
+
+[node name="AnimationHandler" type="Node" parent="." unique_id=499984663]
+script = ExtResource("3_cb3rx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=304513221]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_xb475")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=187335052]
+transform = Transform3D(1, 9.126256e-09, -1.8567806e-09, 0, 0.1993703, 0.97992426, 9.313226e-09, -0.97992426, 0.19937031, -5.0242646e-09, 4.1409, 0.57499456)
+
+[node name="PlayerMenu" type="Control" parent="." unique_id=512962298]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_3ped1")
+
+[node name="Name" type="Label" parent="PlayerMenu" unique_id=1012707140]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -29.0
+offset_right = 77.0
+offset_bottom = -6.0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_3ped1")
+text = "Player"
+label_settings = SubResource("LabelSettings_m8kcf")
+
+[node name="Level_ 1" type="Label" parent="PlayerMenu" unique_id=987543742]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -196.0
+offset_top = 24.0
+offset_right = -9.0
+offset_bottom = 93.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_3ped1")
+text = "Level 1"
+label_settings = SubResource("LabelSettings_m8kcf")

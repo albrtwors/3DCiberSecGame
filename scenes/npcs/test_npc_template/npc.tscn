@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cskm20m7hu5iy"]
+
+[ext_resource type="Script" uid="uid://csgq83v220ylb" path="res://scripts/npc.gd" id="1_3iax6"]
+[ext_resource type="Resource" uid="uid://ckve8cyejg3l1" path="res://assets/dialogues/test_npc/untitled.dialogue" id="2_416vu"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4td8i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_65pvw"]
+
+[node name="NPC" type="MeshInstance3D" unique_id=395984761]
+mesh = SubResource("CapsuleMesh_4td8i")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=895244433]
+script = ExtResource("1_3iax6")
+recurso_dialogo = ExtResource("2_416vu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=867001509]
+transform = Transform3D(1.57, 0, 0, 0, 1.57, 0, 0, 0, 1.57, 0, 0, 0)
+shape = SubResource("BoxShape3D_65pvw")

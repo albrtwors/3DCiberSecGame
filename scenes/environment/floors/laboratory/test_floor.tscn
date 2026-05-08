@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://csjj87xkf7wat"]
+
+[ext_resource type="Texture2D" uid="uid://okhdi4pphr6v" path="res://assets/textures/metal/Gemini_Generated_Image_sh18opsh18opsh18.png" id="1_ecqsi"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1av4s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87j8m"]
+albedo_texture = ExtResource("1_ecqsi")
+uv1_scale = Vector3(26.1, 7.41, 10.305)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_437je"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" unique_id=1327042050]
+transform = Transform3D(30, 0, 0, 0, 0.478, 0, 0, 0, 5.742, 0, 0, 0)
+mesh = SubResource("PlaneMesh_1av4s")
+surface_material_override/0 = SubResource("StandardMaterial3D_87j8m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=191233174]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=105258942]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_437je")

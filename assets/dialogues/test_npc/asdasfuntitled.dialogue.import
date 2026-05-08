@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cyyoudvpfv02j"
+path="res://.godot/imported/asdasfuntitled.dialogue-e9b6fca84ebaea3fba59cfc17a63aa0e.tres"
+
+[deps]
+
+source_file="res://assets/dialogues/test_npc/asdasfuntitled.dialogue"
+dest_files=["res://.godot/imported/asdasfuntitled.dialogue-e9b6fca84ebaea3fba59cfc17a63aa0e.tres"]
+
+[params]
+
+defaults=true
