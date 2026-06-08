@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c1vng30v1ijj7"]
+
+[ext_resource type="PackedScene" uid="uid://h0u24m8ytu72" path="res://assets/models/characters/female.glb" id="1_4iutq"]
+[ext_resource type="Shader" uid="uid://cb0q3r88sfjws" path="res://scenes/test_levels/test_1/level.gdshader" id="2_arwm1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_goiks"]
+render_priority = 0
+shader = ExtResource("2_arwm1")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_width = 3.0000001425
+
+[node name="female" unique_id=1391152483 instance=ExtResource("1_4iutq")]
+
+[node name="Head_001" parent="Character woman_001/Skeleton3D" parent_id_path=PackedInt32Array(887690989) index="1" unique_id=1851826191]
+material_overlay = SubResource("ShaderMaterial_goiks")

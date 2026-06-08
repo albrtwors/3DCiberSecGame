@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dnce2qj4qsixw"]
+
+[ext_resource type="PackedScene" uid="uid://btmhm7dbuk4vf" path="res://assets/models/characters/male.glb" id="1_0pidv"]
+[ext_resource type="Shader" uid="uid://cb0q3r88sfjws" path="res://scenes/test_levels/test_1/level.gdshader" id="2_e5ywd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cb11l"]
+render_priority = 0
+shader = ExtResource("2_e5ywd")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_width = 3.0000001425
+
+[node name="male" unique_id=688441413 instance=ExtResource("1_0pidv")]
+
+[node name="Head" parent="Character base/Skeleton3D" parent_id_path=PackedInt32Array(2043900727) index="1" unique_id=1146652173]
+material_overlay = SubResource("ShaderMaterial_cb11l")

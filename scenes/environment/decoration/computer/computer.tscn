@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://204e4gpcreyl"]
+
+[ext_resource type="PackedScene" uid="uid://cu1qnivwuiuhn" path="res://assets/models/furniture/computer/lp_old_computer_low_poly_cartoon.glb" id="1_a6246"]
+
+[node name="Sketchfab_Scene" unique_id=869000529 instance=ExtResource("1_a6246")]
+transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)

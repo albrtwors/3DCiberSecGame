@@ -1,6 +1,27 @@
 [gd_scene format=3 uid="uid://4m6qrfpqfrv7"]
 
 [ext_resource type="Script" uid="uid://m7b1oqmxsebq" path="res://scenes/main_scene/ui.gd" id="1_bnjq7"]
+[ext_resource type="PackedScene" uid="uid://cmw4s5tea82hl" path="res://scenes/menus/character_selector/character_selector.tscn" id="2_p3x5j"]
+[ext_resource type="Texture2D" uid="uid://cr843qxnq23a1" path="res://assets/backgrounds/menu/Gemini_Generated_Image_fnins7fnins7fnin.png" id="2_qe72t"]
+[ext_resource type="LabelSettings" uid="uid://jkvny2wqdb04" path="res://resources/labels/default_cartoon.tres" id="4_5tlcy"]
+[ext_resource type="Texture2D" uid="uid://kgyplf58cd5w" path="res://assets/backgrounds/menu/character_editing.png" id="4_1862s"]
+[ext_resource type="PackedScene" uid="uid://clcbx2wlf7tyi" path="res://scenes/ui/buttons/generic_button.tscn" id="5_qe72t"]
+[ext_resource type="FontFile" uid="uid://bxb06470lq2wq" path="res://assets/fonts/GROBOLD.ttf" id="6_3xoal"]
+[ext_resource type="Texture2D" uid="uid://c2m6fyjhdcr5t" path="res://assets/textures/ui/inputs/generic_input.png" id="7_6duou"]
+[ext_resource type="PackedScene" uid="uid://egy63r6lxjyf" path="res://scenes/ui/buttons/generic_square.tscn" id="9_6duou"]
+
+[sub_resource type="Theme" id="Theme_1862s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_81wn5"]
+texture = ExtResource("2_qe72t")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3xoal"]
+texture = ExtResource("4_1862s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fi08e"]
+texture = ExtResource("7_6duou")
+
+[sub_resource type="Theme" id="Theme_81wn5"]
 
 [node name="UI" type="Control" unique_id=1573065100]
 layout_mode = 3
@@ -12,65 +33,216 @@ grow_vertical = 2
 script = ExtResource("1_bnjq7")
 
 [node name="MainMenu" type="Panel" parent="." unique_id=957962671]
+visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1862s")
+theme_override_styles/panel = SubResource("StyleBoxTexture_81wn5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu" unique_id=1030837142]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -346.0
+offset_top = -106.0
+offset_right = -45.99951
+offset_bottom = -26.0
+grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="MainMenu" unique_id=481175737]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -112.0
-offset_top = -26.5
-offset_right = 112.0
-offset_bottom = 26.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
+[node name="Button2" parent="MainMenu/VBoxContainer" unique_id=220145321 instance=ExtResource("5_qe72t")]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
 text = "Iniciar Partida"
 
 [node name="CharacterMenu" type="Panel" parent="." unique_id=1004719108]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3xoal")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMenu" unique_id=1155701948]
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterMenu" unique_id=1306579068]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -218.0
-offset_top = -198.0
-offset_right = 211.0
-offset_bottom = 186.0
+offset_left = -322.0
+offset_top = -214.0
+offset_right = 323.0
+offset_bottom = 262.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 17
+theme_override_constants/separation = 45
+alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="CharacterMenu/VBoxContainer" unique_id=1158366002]
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMenu/HBoxContainer" unique_id=1155701948]
+custom_minimum_size = Vector2(0.31, 450)
 layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="SubViewportContainer" parent="CharacterMenu/HBoxContainer/VBoxContainer" unique_id=130005349 instance=ExtResource("2_p3x5j")]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="CharacterMenu/HBoxContainer/VBoxContainer" unique_id=1158366002]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/caret_width = 2
+theme_override_constants/minimum_character_width = 6
+theme_override_fonts/font = ExtResource("6_3xoal")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fi08e")
+theme_override_styles/read_only = SubResource("StyleBoxTexture_fi08e")
+theme_override_styles/focus = SubResource("StyleBoxTexture_fi08e")
 placeholder_text = "Nombre"
+alignment = 1
+max_length = 10
 
-[node name="Button2" type="Button" parent="CharacterMenu/VBoxContainer" unique_id=1173935444]
+[node name="Button" parent="CharacterMenu/HBoxContainer/VBoxContainer" unique_id=225928233 instance=ExtResource("5_qe72t")]
+custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
 text = "Aceptar"
 
-[connection signal="pressed" from="MainMenu/Button" to="." method="_on_new_game_start_pressed"]
-[connection signal="text_changed" from="CharacterMenu/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
-[connection signal="pressed" from="CharacterMenu/VBoxContainer/Button2" to="." method="_on_BotonJugar_pressed"]
+[node name="Panel2" type="Panel" parent="CharacterMenu/HBoxContainer" unique_id=1845836585]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="ClothesPanel" type="VBoxContainer" parent="CharacterMenu/HBoxContainer/Panel2" unique_id=583079439]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -105.5
+offset_right = 150.0
+offset_bottom = 105.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_81wn5")
+theme_override_constants/separation = 17
+alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel" unique_id=310067772]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer4" unique_id=1536258401]
+layout_mode = 2
+text = "Género"
+label_settings = ExtResource("4_5tlcy")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer4" unique_id=1806253785]
+layout_mode = 2
+alignment = 1
+
+[node name="Button3" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer4/HBoxContainer" unique_id=2014359530 instance=ExtResource("9_6duou")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "♂️"
+
+[node name="Button4" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer4/HBoxContainer" unique_id=1437880635 instance=ExtResource("9_6duou")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "♀️"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel" unique_id=1013007380]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer" unique_id=409150841]
+layout_mode = 2
+text = "Cabello"
+label_settings = ExtResource("4_5tlcy")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer" unique_id=526649237]
+layout_mode = 2
+alignment = 1
+
+[node name="Button3" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer/HBoxContainer" unique_id=2038261806 instance=ExtResource("9_6duou")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button4" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer/HBoxContainer" unique_id=1734136550 instance=ExtResource("9_6duou")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = ">"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel" unique_id=2045173162]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer2" unique_id=887281502]
+layout_mode = 2
+text = "Ojos"
+label_settings = ExtResource("4_5tlcy")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer2" unique_id=227950473]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer2/HBoxContainer" unique_id=602405749]
+layout_mode = 2
+text = "<"
+
+[node name="Button2" type="Button" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer2/HBoxContainer" unique_id=1416874265]
+layout_mode = 2
+text = ">"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel" unique_id=687503677]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer3" unique_id=938382674]
+layout_mode = 2
+text = "Boca"
+label_settings = ExtResource("4_5tlcy")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer3" unique_id=1803760328]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer3/HBoxContainer" unique_id=446157619]
+layout_mode = 2
+text = "<"
+
+[node name="Button2" type="Button" parent="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer3/HBoxContainer" unique_id=1448639697]
+layout_mode = 2
+text = ">"
+
+[node name="Label" type="Label" parent="CharacterMenu" unique_id=1140951050]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 44.0
+offset_right = 480.0
+offset_bottom = 93.0
+text = "PERSONALIZAR"
+label_settings = ExtResource("4_5tlcy")
+
+[connection signal="pressed" from="MainMenu/VBoxContainer/Button2" to="." method="_on_new_game_start_pressed"]
+[connection signal="text_changed" from="CharacterMenu/HBoxContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="CharacterMenu/HBoxContainer/VBoxContainer/Button" to="." method="_on_BotonJugar_pressed"]
+[connection signal="pressed" from="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer4/HBoxContainer/Button3" to="." method="_on_male_selected_pressed"]
+[connection signal="pressed" from="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer4/HBoxContainer/Button4" to="." method="_on_female_selected_pressed"]
+[connection signal="pressed" from="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer/HBoxContainer/Button3" to="." method="_on_prev_hair_pressed"]
+[connection signal="pressed" from="CharacterMenu/HBoxContainer/Panel2/ClothesPanel/VBoxContainer/HBoxContainer/Button4" to="." method="_on_next_hair_pressed"]

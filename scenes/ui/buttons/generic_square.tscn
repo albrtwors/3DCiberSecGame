@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://egy63r6lxjyf"]
+
+[ext_resource type="PackedScene" uid="uid://clcbx2wlf7tyi" path="res://scenes/ui/buttons/generic_button.tscn" id="1_4p15g"]
+[ext_resource type="Texture2D" uid="uid://cg341cidm44pg" path="res://assets/textures/ui/buttons/generic_square.png" id="2_xwmap"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p40i1"]
+texture = ExtResource("2_xwmap")
+modulate_color = Color(0.6378432, 0.6378432, 0.63784313, 1)
+
+[node name="Button" unique_id=220145321 instance=ExtResource("1_4p15g")]
+offset_right = 60.0
+offset_bottom = 60.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_p40i1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p40i1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_p40i1")
+text = "<"

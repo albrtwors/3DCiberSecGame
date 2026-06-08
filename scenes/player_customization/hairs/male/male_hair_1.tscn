@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c602xccevl071"]
+
+[ext_resource type="PackedScene" uid="uid://30l6m3u0g83l" path="res://assets/models/hairs/male/anime_hair_1.glb" id="1_o3yag"]
+[ext_resource type="Shader" uid="uid://cb0q3r88sfjws" path="res://scenes/test_levels/test_1/level.gdshader" id="2_1k47m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k8hoj"]
+render_priority = 0
+shader = ExtResource("2_1k47m")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_width = 3.0000001425
+
+[node name="anime_hair_1" unique_id=1094427246 instance=ExtResource("1_o3yag")]
+
+[node name="Mesh_0_002" parent="." index="0" unique_id=618946127]
+transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0.033686638, -0.14381683)
+material_overlay = SubResource("ShaderMaterial_k8hoj")

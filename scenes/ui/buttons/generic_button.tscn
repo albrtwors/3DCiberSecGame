@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://clcbx2wlf7tyi"]
+
+[ext_resource type="FontFile" uid="uid://bxb06470lq2wq" path="res://assets/fonts/GROBOLD.ttf" id="1_3km2x"]
+[ext_resource type="Texture2D" uid="uid://cp33pj4sm0f2j" path="res://assets/textures/ui/buttons/tecno_button.png" id="2_ydlgn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ltftt"]
+texture = ExtResource("2_ydlgn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3km2x"]
+texture = ExtResource("2_ydlgn")
+modulate_color = Color(0.4117647, 0.4117647, 0.4117647, 1)
+
+[node name="Button" type="Button" unique_id=220145321]
+offset_right = 314.0
+offset_bottom = 89.0
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("1_3km2x")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxTexture_ltftt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3km2x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3km2x")
+text = "Placeholder"

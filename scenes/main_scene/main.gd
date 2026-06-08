@@ -8,8 +8,11 @@ extends Node
 var menu_principal_tscn: PackedScene = load("res://scenes/menus/main_menu/ui.tscn")
 
 func _ready():
-	events.cargar_nivel.connect(_on_cargar_nivel)
+	EventController.cargar_nivel.connect(_on_cargar_nivel)
+	EventController.level_completed.connect(_on_level_completed)
 	mostrar_menu_principal()
+
+
 
 func mostrar_menu_principal():
 	limpiar_escena()
@@ -32,3 +35,8 @@ func limpiar_escena():
 	# Elimina UI previa (menús)
 	for n in ui_container.get_children():
 		n.queue_free()
+
+func _on_level_completed(stats: Dictionary):
+	print("El jugador hackeó el sistema con éxito.")
+	limpiar_escena()
+	# Aquí podrías usar stats["puzzles_completados"] para la UI

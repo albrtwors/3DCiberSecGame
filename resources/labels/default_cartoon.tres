@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://jkvny2wqdb04"]
+
+[ext_resource type="FontFile" uid="uid://bxb06470lq2wq" path="res://assets/fonts/GROBOLD.ttf" id="1_u23si"]
+
+[resource]
+font = ExtResource("1_u23si")
+font_size = 38
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)

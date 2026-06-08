@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dr0ei3h2ibfp3"]
+
+[ext_resource type="PackedScene" uid="uid://xktou8w2efnr" path="res://assets/models/hardware/servers/server_rack.glb" id="1_ugkxb"]
+[ext_resource type="Script" uid="uid://bch06752q2fin" path="res://scenes/hardware/servers/server.gd" id="2_di6x0"]
+[ext_resource type="Shader" uid="uid://cb0q3r88sfjws" path="res://scenes/test_levels/test_1/level.gdshader" id="3_tg6f6"]
+[ext_resource type="FontFile" uid="uid://bxb06470lq2wq" path="res://assets/fonts/GROBOLD.ttf" id="4_fdylk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_di6x0"]
+height = 0.15576172
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fdylk"]
+render_priority = 0
+shader = ExtResource("3_tg6f6")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_width = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5nldi"]
+albedo_color = Color(0.4340165, 0.8701775, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u6i4b"]
+material = SubResource("StandardMaterial3D_5nldi")
+
+[node name="Server" unique_id=46338060 node_paths=PackedStringArray("purchase_area_root", "purchase_detector", "price_label") instance=ExtResource("1_ugkxb")]
+script = ExtResource("2_di6x0")
+purchase_area_root = NodePath("Purchase AREA")
+purchase_detector = NodePath("Purchase AREA/Area3D")
+price_label = NodePath("Purchase AREA/PriceLabel")
+
+[node name="Purchase AREA" type="Node3D" parent="." index="1" unique_id=383938254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0044078827, 0)
+
+[node name="Area3D" type="Area3D" parent="Purchase AREA" index="0" unique_id=1537376460]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Purchase AREA/Area3D" index="0" unique_id=2641502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.92211914, 1.2545166)
+shape = SubResource("CylinderShape3D_di6x0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Purchase AREA" index="1" unique_id=688691268]
+transform = Transform3D(1, 0, 0, 0, 0.061222017, 0, 0, 0, 1, 0, -0.92803955, 1.2348633)
+material_overlay = SubResource("ShaderMaterial_fdylk")
+mesh = SubResource("CylinderMesh_u6i4b")
+
+[node name="PriceLabel" type="Label3D" parent="Purchase AREA" index="2" unique_id=696817579]
+transform = Transform3D(1, 0, 0, 0, 0.88033664, 0.4743494, 0, -0.4743494, 0.88033664, 0, -0.43525696, 1.3469543)
+text = "100"
+font = ExtResource("4_fdylk")
+font_size = 50

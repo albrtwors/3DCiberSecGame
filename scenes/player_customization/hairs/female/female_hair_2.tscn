@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dicdbw6on4x13"]
+
+[ext_resource type="PackedScene" uid="uid://d30bkxxf8m26g" path="res://assets/models/hairs/female/female_hair_2.glb" id="1_3gkj4"]
+[ext_resource type="Shader" uid="uid://cb0q3r88sfjws" path="res://scenes/test_levels/test_1/level.gdshader" id="2_ru0lw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_36mvt"]
+render_priority = 0
+shader = ExtResource("2_ru0lw")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_width = 2.0
+
+[node name="female_hair_2" unique_id=1957810144 instance=ExtResource("1_3gkj4")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, -0.050712973)
+
+[node name="SwagDev_HanakoHairstyle" parent="." index="0" unique_id=828621412]
+material_overlay = SubResource("ShaderMaterial_36mvt")

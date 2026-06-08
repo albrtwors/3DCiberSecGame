@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ccqio7wrh4ady"]
+
+[ext_resource type="PackedScene" uid="uid://c4nsn7lsyqpgr" path="res://assets/models/hairs/female/female_hair_1.glb" id="1_hmntw"]
+[ext_resource type="Shader" uid="uid://cb0q3r88sfjws" path="res://scenes/test_levels/test_1/level.gdshader" id="2_qsac2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ejga5"]
+albedo_color = Color(0.30507714, 0.30507714, 0.30507714, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5q3mo"]
+render_priority = 0
+shader = ExtResource("2_qsac2")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_width = 2.0
+
+[node name="female_hair_1" unique_id=1191452525 instance=ExtResource("1_hmntw")]
+transform = Transform3D(2.75, 0, 0, 0, 2.75, 0, 0, 0, 2.75, 0, 0.088443935, -0.07470685)
+
+[node name="AmaiHair" parent="." index="0" unique_id=311617284]
+material_override = SubResource("StandardMaterial3D_ejga5")
+material_overlay = SubResource("ShaderMaterial_5q3mo")

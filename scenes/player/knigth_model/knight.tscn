@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bems7gmvwt8tr"]
+
+[ext_resource type="PackedScene" uid="uid://wj445akmrg8q" path="res://assets/models/chibi_knight/knight.glb" id="1_hoedc"]
+
+[node name="knight" unique_id=154125712 instance=ExtResource("1_hoedc")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+
+[node name="Skeleton3D" parent="LongLegsKnight_Rig" parent_id_path=PackedInt32Array(283523841) index="0" unique_id=104535997]
+bones/2/rotation = Quaternion(0.00025386168, 0.70710677, 0.7071067, -0.0002538617)
+bones/23/rotation = Quaternion(0.6180619, 0.6233572, -0.33361048, -0.3436995)
+bones/56/rotation = Quaternion(0.2142927, 0.82663375, 0.35518336, -0.38026324)
+bones/59/rotation = Quaternion(0.9437118, -0.001140233, -0.023500606, 0.32993108)
+bones/60/rotation = Quaternion(0.0032418366, -0.009096974, 0.00017752912, 0.9999534)
+bones/61/rotation = Quaternion(0.027331611, -0.6751117, 0.73702675, 0.016396249)
+bones/69/rotation = Quaternion(0.9437118, 0.001140233, 0.023500606, 0.32993108)
+bones/70/rotation = Quaternion(0.0032418366, 0.009096974, -0.00017752912, 0.9999534)
+bones/71/rotation = Quaternion(-0.027331611, -0.6751117, 0.73702675, -0.016396249)
